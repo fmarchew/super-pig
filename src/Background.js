@@ -47,7 +47,7 @@ function Background() {
 
         function init(){
             setInterval(()=>{
-                for (let i = 0; i < 5 ; i++){
+                for (let i = 0; i < Math.floor(Math.random() * (4- 1)) + 1 ; i++){
                     particlesArray.push(new Particle());
                 }
             },4000)
