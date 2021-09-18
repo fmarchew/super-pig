@@ -9,6 +9,7 @@ function Background() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         const particlesArray = [];
+
         const mouse = {
             x: undefined,
             y: undefined,
@@ -23,13 +24,15 @@ function Background() {
         }
         drawCircle()
 
-        class Particle {
+        // CLOUDS CLASS
+
+        class Clouds {
             constructor(){
                 // this.x = mouse.x;
                 // this.y = mouse.y;
-                this.x = Math.floor(Math.random() * (2500 - 1900)) + 1900;
+                this.x = Math.floor(Math.random() * ((canvas.width + 300) - (canvas.width + 10))) + (canvas.width + 10);
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 5 + 1;
+                this.size = Math.random() * 75 + 50;
                 this.speedX = -5;
                 this.speedY = 0;
             }
@@ -40,30 +43,32 @@ function Background() {
             draw(){
                 ctx.fillStyle = "white";
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, 100, 0, Math.PI * 2);
-                ctx.fill();
+                for(let i = 0; i < Math.floor(Math.random() * (6 - 3)) + 3 ; i++){
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
             }
         }
 
         function init(){
             setInterval(()=>{
                 for (let i = 0; i < Math.floor(Math.random() * (4- 1)) + 1 ; i++){
-                    particlesArray.push(new Particle());
+                    particlesArray.push(new Clouds());
                 }
             },4000)
 
         }
         init();
 
-        function handleParticles(){
+        function handleClouds(){
             for(let i = 0; i < particlesArray.length; i++){
                 particlesArray[i].update();
                 particlesArray[i].draw();
             }
         }
 
-
-
+        // END OF CLOUDS CLASS
 
 
         canvas.addEventListener('mousemove', function(event){
@@ -75,7 +80,7 @@ function Background() {
         function animate(){
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawCircle()
-            handleParticles()
+            handleClouds()
             requestAnimationFrame(animate);
         }
         animate();
