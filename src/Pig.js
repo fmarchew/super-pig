@@ -20,7 +20,8 @@ function Pig(ctx, canvas, pigProps) {
     pig.draw()
     pig.x = pigProps.x;
     pig.y = pigProps.y;
-
+    console.log(pig)
 }
+
 
 export default Pig;
