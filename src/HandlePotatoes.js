@@ -2,10 +2,14 @@ import data from "./data";
 
 export default function HandlePotatoes(ctx, canvas) {
 
-    for (let i = 0; i < data.potatoesArray.length; i++) {
-        data.potatoesArray[i].update(canvas);
-        data.potatoesArray[i].draw(ctx);
-    }
+    data.potatoesArray.forEach((el, idx, obj)=>{
+        el.update(canvas);
+        if(el.marked){
+            obj.splice(idx, 1)
+            data.player.points++
+        }
+        el.draw(ctx)
 
+    })
 }
 

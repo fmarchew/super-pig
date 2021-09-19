@@ -5,6 +5,7 @@ import handleClouds from "./HandleClouds";
 import PigMovement from "./PigMovement";
 import initPotatoes from "./InitPotatoes";
 import handlePotatoes from "./HandlePotatoes";
+import Interface from "./Interface";
 
 
 const {pigCoordinates} = data
@@ -22,12 +23,13 @@ function Background() {
         initClouds(canvas)
         initPotatoes(canvas)
 
-        function animate(timestamp) {
+        function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            PigMovement(ctx);
             handleClouds(ctx);
             handlePotatoes(ctx, canvas);
-            console.log(data.cloudsArray)
+            PigMovement(ctx);
+            Interface(ctx);
+            // console.log(data.cloudsArray)
             requestAnimationFrame(animate);
         }
         animate();

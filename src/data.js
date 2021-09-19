@@ -1,4 +1,7 @@
 export default{
+    player: {
+        points: 0
+    },
     pigCoordinates: {
         x: 500,
         y: 500,
