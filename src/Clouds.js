@@ -5,10 +5,12 @@ export default class Clouds {
         this.size = Math.random() * 75 + 50;
         this.speedX = -5;
         this.color = "white"
+        this.outOfScreen = false;
     }
 
     update() {
         this.x += this.speedX;
+        if(this.x < 0)this.outOfScreen = true;
     }
 
     draw(ctx) {

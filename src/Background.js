@@ -1,30 +1,36 @@
 import React, {useEffect, useRef} from 'react';
 import data from "./data";
-import Pig from "./Pig";
 import initClouds from "./InitClouds";
 import handleClouds from "./HandleClouds";
+import PigMovement from "./PigMovement";
+import initPotatoes from "./InitPotatoes";
+import handlePotatoes from "./HandlePotatoes";
 
 
-const {pigProps} = data
+const {pigCoordinates} = data
+
+
 
 function Background() {
     const canvasRef = useRef(null);
 
     useEffect(() => {
-        console.log("===============")
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
         ctx.beginPath();
 
         initClouds(canvas)
+        initPotatoes(canvas)
 
-        function animate() {
+        function animate(timestamp) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            Pig(ctx, canvas, pigProps);
-            handleClouds(ctx)
+            PigMovement(ctx);
+            handleClouds(ctx);
+            handlePotatoes(ctx, canvas);
+            console.log(data.cloudsArray)
             requestAnimationFrame(animate);
         }
-        animate()
+        animate();
 
     }, []);
 
@@ -36,8 +42,8 @@ function Background() {
             width={window.innerWidth}
             height={window.innerHeight}
             onMouseMove={event => {
-                pigProps.x = event.clientX;
-                pigProps.y = event.clientY;
+                pigCoordinates.x = event.clientX;
+                pigCoordinates.y = event.clientY;
             }}
         />
     </>)
