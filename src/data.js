@@ -1,4 +1,4 @@
-export default{
+const data ={
     player: {
         points: 0
     },
@@ -17,3 +17,4 @@ export default{
         color: "brown",
     }
 }
+export default data
