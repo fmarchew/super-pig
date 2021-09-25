@@ -28,9 +28,21 @@ export default class Potatoes {
 
 
         if (distance < sumOfRadius) {
+
+            data.frames.frameX = 0;
+            data.frames.frameY = 1
+            setTimeout(()=>{
+                data.frames.frameY = 0
+            },300)
             return this.marked = true;
 
         } else if (distance === sumOfRadius) {
+
+            data.frames.frameX = 0;
+            data.frames.frameY = 1
+            setTimeout(()=>{
+                data.frames.frameY = 0
+            },300)
             return this.marked = true;
 
         }

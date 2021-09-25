@@ -10,6 +10,7 @@ const data ={
     pig:{
         color: "pink",
         radius: 75,
+        speed: 3,
     },
     cloudsArray: [],
     potatoesArray: [],
@@ -26,6 +27,12 @@ const data ={
     sprite: {
       spriteWidth: 350,
       spriteHeight: 350,
+    },
+    moving: {
+        left: false,
+        right: false,
+        down: false,
+        up: false,
     }
 
 }
