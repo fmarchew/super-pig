@@ -12,12 +12,18 @@ const {pigCoordinates} = data
 
 
 
+
 function Background() {
     const canvasRef = useRef(null);
 
+
+
+
     useEffect(() => {
+        // let pig = document.getElementById("pig")
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
+
         ctx.beginPath();
 
         initClouds(canvas)
@@ -25,11 +31,12 @@ function Background() {
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+
             handleClouds(ctx);
             handlePotatoes(ctx, canvas);
-            PigMovement(ctx);
             Interface(ctx);
-            // console.log(data.cloudsArray)
+            PigMovement(ctx);
+
             requestAnimationFrame(animate);
         }
         animate();
