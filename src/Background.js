@@ -29,7 +29,7 @@ function Background() {
         function animate() {
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            if (data.player.dead) {
+            if (data.player.lives <= 0) {
                 ctx.font = "bold 100px sans serif";
                 ctx.fillStyle = "red";
                 ctx.fillText(`GAME OVER`, canvas.width / 2 - 350, canvas.height / 2)

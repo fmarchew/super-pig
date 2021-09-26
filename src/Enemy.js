@@ -27,19 +27,39 @@ export default class Enemy{
         if (this.x < 0) this.outOfScreen = true;
 
         // COLLISON
-        let dx = data.pigCoordinates.x - this.x;
-        let dy = data.pigCoordinates.y - this.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
-        let sumOfRadius = data.pig.radius + this.radius;
+        if(!data.player.untouchable) {
+
+            let dx = data.pigCoordinates.x - this.x;
+            let dy = data.pigCoordinates.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            let sumOfRadius = data.pig.radius + this.radius;
 
 
-        if (distance < sumOfRadius) {
-            data.player.dead = true
-        } else if (distance === sumOfRadius) {
-            data.player.dead = true
+            if (distance < sumOfRadius) {
+                // data.player.dead = true
+                // data.player.untouchable = true
+                data.player.untouchable = true
+                data.frames.lastFrame = 6
+                this.marked = true;
+                data.player.lives--
+                setTimeout(() => {
+                    data.frames.lastFrame = 4
+                    data.player.untouchable = false
+                }, 3000)
+            } else if (distance === sumOfRadius) {
+                // data.player.dead = true
+                // data.player.untouchable = true
+                data.player.untouchable = true
+                data.frames.lastFrame = 6
+                this.marked = true;
+                data.player.lives--
+                setTimeout(() => {
+                    data.frames.lastFrame = 4
+                    data.player.untouchable = false
+                }, 3000)
+            }
+
         }
-
-
         // this.gameFrame ++
     }
     draw(ctx){

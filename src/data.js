@@ -2,7 +2,8 @@
 const data ={
     player: {
         points: 0,
-        dead: false
+        untouchable: false,
+        lives: 3
     },
     pigCoordinates: {
         x: 500,
@@ -24,6 +25,7 @@ const data ={
         frameX: 0,
         frameY: 0,
         gameFrame: 0,
+        lastFrame: 4
     },
     sprite: {
       spriteWidth: 350,
