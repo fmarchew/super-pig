@@ -8,6 +8,7 @@ import Interface from "./Interface";
 import data from "./data";
 import HandleEnemies from "./HandleEnemies";
 import InitEnemies from "./InitEnemies";
+import spriteSheet from "./pigSprite.png";
 
 
 function Background() {
@@ -30,9 +31,12 @@ function Background() {
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             if (data.player.lives <= 0) {
-                ctx.font = "bold 100px sans serif";
+                ctx.font = "bold 100px Comic Sans MS";
                 ctx.fillStyle = "red";
-                ctx.fillText(`GAME OVER`, canvas.width / 2 - 350, canvas.height / 2)
+                ctx.fillText(`GAME OVER`, canvas.width / 2 - 350, canvas.height / 2 - 100)
+                const deadPig = new Image();
+                deadPig.src = spriteSheet;
+                ctx.drawImage(deadPig, 0, 2 * 350, 350, 350, canvas.width / 2 - 200, canvas.height / 2 - 100, 350, 350)
             } else if(window) {
                 handleClouds(ctx);
                 handlePotatoes(ctx, canvas);
