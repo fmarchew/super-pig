@@ -28,7 +28,7 @@ function PigMovement(ctx) {
 
     // pig.x = data.pigCoordinates.x;
     // pig.y = data.pigCoordinates.y;
-    console.log(data.pigCoordinates);
+    // console.log(data.pigCoordinates);
 
 }
 

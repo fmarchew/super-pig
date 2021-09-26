@@ -5,9 +5,9 @@ import PigMovement from "./PigMovement";
 import initPotatoes from "./InitPotatoes";
 import handlePotatoes from "./HandlePotatoes";
 import Interface from "./Interface";
-
-
-
+import data from "./data";
+import HandleEnemies from "./HandleEnemies";
+import InitEnemies from "./InitEnemies";
 
 
 function Background() {
@@ -20,26 +20,33 @@ function Background() {
         const ctx = canvas.getContext("2d");
 
 
-
-
         ctx.beginPath();
 
         initClouds(canvas)
         initPotatoes(canvas)
-
+        InitEnemies(canvas)
 
         function animate() {
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            handleClouds(ctx);
-            handlePotatoes(ctx, canvas);
-            Interface(ctx);
-            PigMovement(ctx);
-
-            requestAnimationFrame(animate);
+            if (data.player.dead) {
+                ctx.font = "bold 100px sans serif";
+                ctx.fillStyle = "red";
+                ctx.fillText(`GAME OVER`, canvas.width / 2 - 350, canvas.height / 2)
+            } else if(window) {
+                handleClouds(ctx);
+                handlePotatoes(ctx, canvas);
+                Interface(ctx);
+                HandleEnemies(ctx, canvas)
+                PigMovement(ctx);
+                // console.log(data.cloudsArray);
+                // console.log(data.potatoesArray);
+                // console.log(data.player.dead);
+                requestAnimationFrame(animate);
+            }
         }
 
-        animate();
+        animate()
 
     }, []);
 

@@ -1,7 +1,8 @@
 
 const data ={
     player: {
-        points: 0
+        points: 0,
+        dead: false
     },
     pigCoordinates: {
         x: 500,
@@ -9,11 +10,12 @@ const data ={
     },
     pig:{
         color: "pink",
-        radius: 75,
+        radius: 70,
         speed: 3,
     },
     cloudsArray: [],
     potatoesArray: [],
+    enemiesArray: [],
     potatoes: {
         radius: 10,
         color: "brown",
@@ -22,7 +24,6 @@ const data ={
         frameX: 0,
         frameY: 0,
         gameFrame: 0,
-        staggerFrames: 5,
     },
     sprite: {
       spriteWidth: 350,
