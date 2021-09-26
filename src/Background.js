@@ -47,6 +47,7 @@ function Background() {
                 // console.log(data.potatoesArray);
                 // console.log(data.player.dead);
                 requestAnimationFrame(animate);
+                console.log(canvas.height);
             }
         }
 
