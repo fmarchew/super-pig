@@ -1,13 +1,53 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  border: none;
 }
 
-#canvas{
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: skyblue;
+  align-items: center;
+}
+
+#canvas {
   position: absolute;
   background-color: lightblue;
   top: 0;
   left: 0;
   //cursor: none;
+}
+
+.menu {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1{
+    text-align: center;
+    font: 100px Comic Sans MS;
+    color: pink;
+    text-shadow: -0.3rem 0 black, 0 0.3rem black, 0.3rem 0 black, 0 -0.3rem black;
+
+  }
+
+  button {
+    width: 70%;
+    text-decoration: none;
+    font: 25px Comic Sans MS;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: blanchedalmond;
+    border-radius: 1rem;
+    color: lightpink;
+    text-shadow: -0.1rem 0 black, 0 0.1rem black, 0.1rem 0 black, 0 -0.1rem black;
+    cursor: pointer;
+    box-shadow: -0.1rem 0 deeppink, 0 0.1rem deeppink, 0.1rem 0 deeppink, 0 -0.1rem deeppink;;
+  }
 }

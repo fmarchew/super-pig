@@ -1,4 +1,5 @@
 import data from "./data";
+import cloudImage from "./cloudsSprites.png";
 
 export default class Potatoes {
 
@@ -7,9 +8,10 @@ export default class Potatoes {
         this.y = Math.random() * canvas.height;
         this.speedX = Math.random() * 5 + 3;
         this.speedY = Math.random() * 5 - 2.5;
-        this.radius = 10;
+        this.radius = 20;
         this.outOfScreen = false;
         this.marked = false;
+        this.randomNumber = Math.floor(Math.random() * (4 - 0)) + 0;
     }
 
     update(canvas) {
@@ -50,11 +52,16 @@ export default class Potatoes {
     }
 
     draw(ctx) {
-        ctx.fillStyle = "brown";
+
+        const cloud = new Image();
+        cloud.src = cloudImage;
+
+
+        // ctx.fillStyle = "brown";
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
-
+        // ctx.fill();
+        ctx.drawImage(cloud, this.randomNumber * 350, 350, 350, 350, this.x - 30, this.y - 30, 70, 70)
     }
 }
 
