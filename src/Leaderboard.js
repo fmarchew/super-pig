@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import data from "./data";
 import {db} from "./firebase";
 import {collection, getDocs} from "firebase/firestore"
-import {Link} from "react-router-dom";
+
 
 
 function Leaderboard() {
