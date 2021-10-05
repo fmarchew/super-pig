@@ -20,6 +20,7 @@ body {
   background-color: lightblue;
   top: 0;
   left: 0;
+  z-index: -1;
   //cursor: none;
 }
 
@@ -37,7 +38,7 @@ body {
 
   }
 
-  button {
+  a {
     width: 70%;
     text-decoration: none;
     font: 25px Comic Sans MS;
@@ -48,6 +49,76 @@ body {
     color: lightpink;
     text-shadow: -0.1rem 0 black, 0 0.1rem black, 0.1rem 0 black, 0 -0.1rem black;
     cursor: pointer;
-    box-shadow: -0.1rem 0 deeppink, 0 0.1rem deeppink, 0.1rem 0 deeppink, 0 -0.1rem deeppink;;
+    outline: 0.2rem solid deeppink;
+    text-align: center;
+  }
+
+
+}
+.addScore {
+  position: relative;
+  top: 15rem;
+  flex-direction: row;
+
+  input{
+    width: 70%;
+    text-decoration: none;
+    font: 25px Comic Sans MS;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: palevioletred;
+    border-radius: 1rem;
+    color: lightpink;
+    text-shadow: -0.1rem 0 black, 0 0.1rem black, 0.1rem 0 black, 0 -0.1rem black;
+    outline: 0.2rem solid red;
+    text-align: center;
+  }
+
+  input:focus{
+    border: none;
+    box-shadow: none;
+    outline: 0.2rem solid red;
+  }
+  ::placeholder{
+    color: lightpink;
+    text-shadow: none;
+  }
+
+
+  a{
+    outline: red 0.2rem solid;
+    background-color: palevioletred;
   }
 }
+#leaderboard{
+  text-align: center;
+  width: 100vw;
+  font: 2.5rem Comic Sans MS;
+  background-color: black;
+  outline: 0.2rem solid black;
+  color: hotpink;
+
+
+  tbody tr:nth-child(odd) {
+    background-color: blanchedalmond;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: lightpink;
+  }
+
+  td{
+    padding: 0.5rem;
+    color: black;
+  }
+  th{
+    padding-right: 2rem ;
+    text-shadow: -0.1rem 0 black, 0 0.1rem black, 0.1rem 0 black, 0 -0.1rem black;
+  }
+
+
+}
+#tryAgain{
+  justify-self: flex-end;
+}
+

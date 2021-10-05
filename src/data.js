@@ -3,7 +3,8 @@ const data ={
     player: {
         points: 0,
         untouchable: false,
-        lives: 3
+        lives: 3,
+        dead: false
     },
     pigCoordinates: {
         x: 500,

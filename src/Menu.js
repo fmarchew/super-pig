@@ -1,23 +1,16 @@
-import React, {useState} from 'react';
-import Background from "./Background";
-
+import React from 'react';
+import {
+    Link
+} from "react-router-dom";
 function Menu() {
-    const [start, setStart] = useState(false);
-
-    const handleGame = (e) => {
-        e.preventDefault();
-        setStart(true);
-    }
-
     return (
         <>
 
         <div className="menu">
             <h1>Super Pig</h1>
-            <button onClick={(e)=>handleGame(e)}>Start Game</button>
-            {start && <Background/>}
-            <button>Leaderboard</button>
-            <button>credits</button>
+            <Link to="game">Start Game</Link>
+            <Link to="/leaderboard">Leaderboard</Link>
+            <Link to="/credits">credits</Link>
         </div>
         </>
     );
