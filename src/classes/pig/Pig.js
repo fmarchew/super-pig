@@ -1,5 +1,5 @@
-import data from "./data";
-import spriteSheet from "./scss/sprites/pigSprite.png"
+import data from "../../data/data";
+import spriteSheet from "../../sprites/pigSprite.png"
 
 export default class Pig {
     constructor(x, y) {
@@ -18,7 +18,6 @@ export default class Pig {
 
         const pig = new Image();
         pig.src = spriteSheet;
-        // ctx.fillStyle = "pink"
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.drawImage(pig, frameX * 350, frameY * 350, 350, 350, this.x - 75, this.y - 75, 150, 150)
@@ -27,7 +26,7 @@ export default class Pig {
             else data.frames.frameX = 0;
         }
         data.frames.gameFrame++
-        // ctx.fill();
+
 
 
     }

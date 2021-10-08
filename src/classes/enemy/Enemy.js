@@ -1,6 +1,6 @@
 // import data from "./data";
-import enemyImage from "./scss/sprites/enemySprite.png"
-import data from "./data";
+import enemyImage from "../../sprites/enemySprite.png"
+import data from "../../data/data";
 
 
 export default class Enemy{
@@ -35,7 +35,7 @@ export default class Enemy{
             let sumOfRadius = data.pig.radius + this.radius;
 
 
-            if (distance < sumOfRadius) {
+            if (distance < sumOfRadius || distance === sumOfRadius) {
                 // data.player.dead = true
                 // data.player.untouchable = true
                 data.player.untouchable = true
@@ -46,21 +46,11 @@ export default class Enemy{
                     data.frames.lastFrame = 4
                     data.player.untouchable = false
                 }, 3000)
-            } else if (distance === sumOfRadius) {
-                // data.player.dead = true
-                // data.player.untouchable = true
-                data.player.untouchable = true
-                data.frames.lastFrame = 6
-                this.marked = true;
-                data.player.lives--
-                setTimeout(() => {
-                    data.frames.lastFrame = 4
-                    data.player.untouchable = false
-                }, 3000)
+
             }
 
         }
-        // this.gameFrame ++
+
     }
     draw(ctx){
         const enemy = new Image();
@@ -74,7 +64,7 @@ export default class Enemy{
             else this.frameX = 0;
         }
         this.gameFrame ++
-        // ctx.fill();
+
 
 
     }

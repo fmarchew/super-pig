@@ -1,4 +1,4 @@
-import data from "./data";
+import data from "../../data/data";
 import Pig from "./Pig";
 
 
@@ -24,11 +24,6 @@ function PigMovement(ctx, canvas) {
     if (data.moving.right && data.pigCoordinates.x < canvas.width) data.pigCoordinates.x += data.pig.speed
     if (data.moving.down && data.pigCoordinates.y < canvas.height) data.pigCoordinates.y += data.pig.speed
     if (data.moving.up && data.pigCoordinates.y > 0) data.pigCoordinates.y -= data.pig.speed
-
-
-    // pig.x = data.pigCoordinates.x;
-    // pig.y = data.pigCoordinates.y;
-    // console.log(data.pigCoordinates);
 
 }
 

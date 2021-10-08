@@ -1,17 +1,17 @@
 import React, {useEffect, useRef, useState} from 'react';
-import initClouds from "./InitClouds";
-import handleClouds from "./HandleClouds";
-import PigMovement from "./PigMovement";
-import initPotatoes from "./InitPotatoes";
-import handlePotatoes from "./HandlePotatoes";
-import Interface from "./Interface";
-import data from "./data";
-import HandleEnemies from "./HandleEnemies";
-import InitEnemies from "./InitEnemies";
-import spriteSheet from "./scss/sprites/pigSprite.png";
+import initClouds from "../classes/cloud/InitClouds";
+import handleClouds from "../classes/cloud/HandleClouds";
+import PigMovement from "../classes/pig/PigMovement";
+import initPotatoes from "../classes/potato/InitPotatoes";
+import handlePotatoes from "../classes/potato/HandlePotatoes";
+import Interface from "../Interface";
+import data from "../data/data";
+import HandleEnemies from "../classes/enemy/HandleEnemies";
+import InitEnemies from "../classes/enemy/InitEnemies";
+import spriteSheet from "../sprites/pigSprite.png";
 import {Link} from "react-router-dom";
 import {addDoc, collection} from "firebase/firestore";
-import {db} from "./firebase";
+import {db} from "../firebase";
 
 
 function Background() {
@@ -26,11 +26,8 @@ function Background() {
         setName(e.target.value);
         console.log(name);
     };
-    const saveScore = async (e) => {
-        let currentName = name;
-        if(name === ""){
-            currentName = "John Doe"
-        }
+    const saveScore = async () => {
+        let currentName = name || "John Doe";
         await addDoc(collection(db, "scores"), {
             name: currentName,
             points: data.player.points,

@@ -1,4 +1,4 @@
-import data from "./data";
+import data from "../../data/data";
 import Clouds from "./Clouds";
 
 export default function initClouds(canvas) {

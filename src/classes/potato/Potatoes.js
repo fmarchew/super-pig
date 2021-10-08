@@ -1,5 +1,5 @@
-import data from "./data";
-import cloudImage from "./scss/sprites/cloudsSprites.png";
+import data from "../../data/data";
+import cloudImage from "../../sprites/cloudsSprites.png";
 
 export default class Potatoes {
 
@@ -29,26 +29,15 @@ export default class Potatoes {
         let sumOfRadius = data.pig.radius + this.radius;
 
 
-        if (distance < sumOfRadius) {
+        if (distance < sumOfRadius || distance === sumOfRadius) {
 
             data.frames.frameX = 0;
             data.frames.frameY = 1
-            setTimeout(()=>{
+            setTimeout(() => {
                 data.frames.frameY = 0
-            },300)
+            }, 300)
             return this.marked = true;
-
-        } else if (distance === sumOfRadius) {
-
-            data.frames.frameX = 0;
-            data.frames.frameY = 1
-            setTimeout(()=>{
-                data.frames.frameY = 0
-            },300)
-            return this.marked = true;
-
         }
-        
     }
 
     draw(ctx) {

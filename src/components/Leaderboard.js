@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {db} from "./firebase";
+import {db} from "../firebase";
 import {collection, getDocs} from "firebase/firestore"
 
 
@@ -15,7 +15,6 @@ function Leaderboard() {
             const querySnapshot = await getDocs(collection(db, "scores"));
             querySnapshot.forEach((doc) => {
                 console.log(doc.id, " => ", doc.data());
-                // setLeaderboard(...prev=>[...prev, doc])
                 let row = doc.data();
                 tab.push(row)
             });
@@ -29,7 +28,6 @@ function Leaderboard() {
 
     return (
         <div className="leaderboard">
-            {/*<h1>Leaderboard</h1>*/}
             <table id="table">
                 <tbody>
                 <tr id="stickyRow">

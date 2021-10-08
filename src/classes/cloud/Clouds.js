@@ -1,4 +1,4 @@
-import cloudImage from "./scss/sprites/cloudsSprites.png"
+import cloudImage from "../../sprites/cloudsSprites.png"
 
 export default class Clouds {
     constructor(canvas) {

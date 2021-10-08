@@ -1,4 +1,4 @@
-import data from "./data";
+import data from "./data/data";
 
 export default function Interface(ctx) {
     ctx.font = "30px Comic Sans MS";

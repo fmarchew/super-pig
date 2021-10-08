@@ -1,16 +1,13 @@
 import './scss/App.scss';
 import React from "react";
-import Menu from "./Menu";
-import Background from "./Background";
-import Leaderboard from "./Leaderboard";
+import Menu from "./components/Menu";
+import Background from "./components/Background";
+import Leaderboard from "./components/Leaderboard";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
-
-
-
 
 function App() {
     return (

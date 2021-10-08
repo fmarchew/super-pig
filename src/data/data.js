@@ -1,5 +1,4 @@
-
-const data ={
+const data = {
     player: {
         points: 0,
         untouchable: false,
@@ -10,12 +9,12 @@ const data ={
         x: 500,
         y: 500,
     },
-    pig:{
+    pig: {
         color: "pink",
         radius: 70,
         speed: 3,
     },
-    enemy:{
+    enemy: {
         speedMin: 3,
         speedMax: 7,
     },
@@ -26,15 +25,15 @@ const data ={
         radius: 10,
         color: "brown",
     },
-    frames:{
+    frames: {
         frameX: 0,
         frameY: 0,
         gameFrame: 0,
         lastFrame: 4
     },
     sprite: {
-      spriteWidth: 350,
-      spriteHeight: 350,
+        spriteWidth: 350,
+        spriteHeight: 350,
     },
     moving: {
         left: false,
