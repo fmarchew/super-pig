@@ -6,13 +6,14 @@ export default function InitEnemies(canvas) {
     let max = 4;
     let counter = 5;
     setInterval(()=>{
-        if(data.player.points === counter){
+        if(data.player.points === counter && counter <= 25){
             min++
             max++
             data.enemy.speedMin++
             data.enemy.speedMax++
             data.pig.speed++
             counter += 5;
+            console.log(min)
         }
     },50)
 

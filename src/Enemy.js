@@ -63,17 +63,8 @@ export default class Enemy{
         // this.gameFrame ++
     }
     draw(ctx){
-        // ctx.fillStyle = "green";
-        // ctx.beginPath();
-        // ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        // ctx.fill();
-
-        // const {enemyFrameX, enemyFrameY, EnemyGameFrame} = data.frames;
-
-
         const enemy = new Image();
         enemy.src = enemyImage;
-        // ctx.fillStyle = "green"
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.drawImage(enemy, this.frameX * 350, this.frameY * 350, 350, 350, this.x - 100, this.y - 100, 200, 200)
