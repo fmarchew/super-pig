@@ -12,8 +12,9 @@
 }
 
 body {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(140, 225, 255, 1) 0%, rgba(42, 114, 185, 1) 100%);
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(173,216,230,1) 0%, rgba(77,180,213,1) 100%);
+  background-color: lightblue;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -23,8 +24,8 @@ body {
 
 #canvas {
   position: absolute;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(140, 225, 255, 1) 0%, rgba(42, 114, 185, 1) 100%);
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(173,216,230,1) 0%, rgba(77,180,213,1) 100%);
   top: 0;
   left: 0;
   z-index: -1;
@@ -132,7 +133,7 @@ body {
   color: white;
   position: sticky;
   top: 0;
-  background: #2a72b9;
+  background: #4db4d5;
 }
 
 #inputName {
