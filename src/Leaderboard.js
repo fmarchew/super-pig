@@ -23,17 +23,16 @@ function Leaderboard() {
             setLeaderboard(tab.sort((a, b) => b.points - a.points));
         }
         loadLeaderboard()
-        // console.log(leaderboard);
     }, [])
 
     console.log(leaderboard);
 
     return (
-        <div className="menu">
-            <h1>Leaderboard</h1>
-            <table id="leaderboard">
+        <div className="leaderboard">
+            {/*<h1>Leaderboard</h1>*/}
+            <table id="table">
                 <tbody>
-                <tr>
+                <tr id="stickyRow">
                     <th>Rank</th>
                     <th>Name</th>
                     <th>Points</th>
@@ -41,7 +40,7 @@ function Leaderboard() {
 
                 {leaderboard.map((e, idx) => {
                     return (
-                        <tr>
+                        <tr key={idx}>
                             <td>{idx + 1}</td>
                             <td>{e.name}</td>
                             <td>{e.points}</td>

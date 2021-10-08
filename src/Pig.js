@@ -1,5 +1,5 @@
 import data from "./data";
-import spriteSheet from "./pigSprite.png"
+import spriteSheet from "./scss/sprites/pigSprite.png"
 
 export default class Pig {
     constructor(x, y) {

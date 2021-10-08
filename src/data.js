@@ -15,6 +15,10 @@ const data ={
         radius: 70,
         speed: 3,
     },
+    enemy:{
+        speedMin: 3,
+        speedMax: 7,
+    },
     cloudsArray: [],
     potatoesArray: [],
     enemiesArray: [],

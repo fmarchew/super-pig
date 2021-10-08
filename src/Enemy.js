@@ -1,5 +1,5 @@
 // import data from "./data";
-import enemyImage from "./enemySprite.png"
+import enemyImage from "./scss/sprites/enemySprite.png"
 import data from "./data";
 
 
@@ -8,8 +8,8 @@ export default class Enemy{
     constructor(canvas) {
         this.x = Math.floor(Math.random() * ((canvas.width + 300) - (canvas.width + 10))) + (canvas.width + 10);
         this.y =  Math.floor(Math.random() * ((canvas.height - 300) - canvas.height - 300)) + canvas.height - 300;
-        this.speedX = Math.random() * 7 + 3;
-        this.speedY = Math.random() * 7 - 2.5;
+        this.speedX = Math.random() * data.enemy.speedMax + data.enemy.speedMin;
+        this.speedY = Math.random() * data.enemy.speedMax - data.enemy.speedMin;
         this.radius = 65;
         this.outOfScreen = false;
         this.marked = false;

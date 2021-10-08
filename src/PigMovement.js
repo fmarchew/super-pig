@@ -3,7 +3,7 @@ import Pig from "./Pig";
 
 
 
-function PigMovement(ctx) {
+function PigMovement(ctx, canvas) {
     let pig = new Pig(data.pigCoordinates.x, data.pigCoordinates.y)
     pig.draw(ctx)
 
@@ -20,10 +20,10 @@ function PigMovement(ctx) {
         if (event.key === "ArrowUp") data.moving.up = false
     })
 
-    if (data.moving.left) data.pigCoordinates.x -= data.pig.speed
-    if (data.moving.right) data.pigCoordinates.x += data.pig.speed
-    if (data.moving.down) data.pigCoordinates.y += data.pig.speed
-    if (data.moving.up) data.pigCoordinates.y -= data.pig.speed
+    if (data.moving.left && data.pigCoordinates.x > 0) data.pigCoordinates.x -= data.pig.speed
+    if (data.moving.right && data.pigCoordinates.x < canvas.width) data.pigCoordinates.x += data.pig.speed
+    if (data.moving.down && data.pigCoordinates.y < canvas.height) data.pigCoordinates.y += data.pig.speed
+    if (data.moving.up && data.pigCoordinates.y > 0) data.pigCoordinates.y -= data.pig.speed
 
 
     // pig.x = data.pigCoordinates.x;
