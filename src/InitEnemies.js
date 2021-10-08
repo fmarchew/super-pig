@@ -17,10 +17,11 @@ export default function InitEnemies(canvas) {
     },50)
 
     setInterval(() => {
-
-        data.enemiesArray = data.enemiesArray.filter((potato)=>!potato.outOfScreen)
-        for (let i = 0; i < Math.floor(Math.random() * (max - min)) + min; i++) {
-            data.enemiesArray.push(new Enemy(canvas));
+        if(document.hasFocus()) {
+            data.enemiesArray = data.enemiesArray.filter((potato) => !potato.outOfScreen)
+            for (let i = 0; i < Math.floor(Math.random() * (max - min)) + min; i++) {
+                data.enemiesArray.push(new Enemy(canvas));
+            }
         }
     }, 3000)
 }

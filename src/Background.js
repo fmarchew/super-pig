@@ -48,9 +48,10 @@ function Background() {
 
         ctx.beginPath();
 
-        initClouds(canvas)
-        initPotatoes(canvas)
-        InitEnemies(canvas)
+
+            initClouds(canvas)
+            initPotatoes(canvas)
+            InitEnemies(canvas)
 
 
         function animate() {
@@ -66,6 +67,7 @@ function Background() {
                 deadPig.src = spriteSheet;
                 ctx.drawImage(deadPig, 0, 2 * 350, 350, 350, canvas.width / 2 - 150, canvas.height / 2 - 200, 350, 350)
             } else {
+
 
                 handleClouds(ctx);
                 handlePotatoes(ctx, canvas);

@@ -27,5 +27,6 @@ export default class Clouds {
         cloud.src = cloudImage;
 
         ctx.drawImage(cloud, this.randomNumber * 350, 0, 350, 350, this.x, this.y, this.size, this.size)
+
     }
 }
