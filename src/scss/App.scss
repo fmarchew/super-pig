@@ -82,8 +82,7 @@ body {
     margin: 1rem;
     background-color: white;
     border-radius: 1rem;
-    color: lightpink;
-    text-shadow: -0.1rem 0 black, 0 0.1rem black, 0.1rem 0 black, 0 -0.1rem black;
+    color: black;
     outline: 0.2rem solid pink;
     text-align: center;
   }
@@ -91,7 +90,6 @@ body {
   ::placeholder {
     color: black;
     text-shadow: none;
-    background-color: lightblue;
   }
 
 }
