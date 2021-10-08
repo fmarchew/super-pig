@@ -14,6 +14,7 @@ import {addDoc, collection} from "firebase/firestore";
 import {db} from "./firebase";
 
 
+
 function Background() {
     const canvasRef = useRef(null);
     const [dead, setDead] = useState(false);
@@ -46,6 +47,8 @@ function Background() {
         initPotatoes(canvas)
         InitEnemies(canvas)
 
+
+
         function animate() {
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -58,7 +61,7 @@ function Background() {
                 const deadPig = new Image();
                 deadPig.src = spriteSheet;
                 ctx.drawImage(deadPig, 0, 2 * 350, 350, 350, canvas.width / 2 - 150, canvas.height / 2 - 200, 350, 350)
-            } else if (window) {
+            } else {
                 // console.log(window.window);
                 handleClouds(ctx);
                 handlePotatoes(ctx, canvas);
@@ -83,6 +86,7 @@ function Background() {
         <div className="menu addScore">
             <input type="text" placeholder={"type your name..."} onChange={handleOnChange} value={name}/>
             <Link to="/leaderboard" onClick={saveScore}>Add Score</Link>
+            <a onClick={()=>window.location.reload()}>Play again</a>
         </div>
         }
         <canvas
