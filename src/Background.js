@@ -86,7 +86,7 @@ function Background() {
         <div className="menu addScore">
             <input type="text" placeholder={"type your name..."} onChange={handleOnChange} value={name}/>
             <Link to="/leaderboard" onClick={saveScore}>Add Score</Link>
-            <a onClick={()=>window.location.reload()}>Play again</a>
+            <Link to="/game" onClick={()=>window.location.reload()}>Play again</Link>
         </div>
         }
         <canvas
