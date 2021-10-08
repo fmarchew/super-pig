@@ -42,6 +42,10 @@ function Background() {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
 
+        data.size.canvasSize = canvas.height
+        data.pigCoordinates.x = canvas.width/3
+        data.pigCoordinates.y = canvas.height/2
+
 
         ctx.beginPath();
 
@@ -57,12 +61,14 @@ function Background() {
             if (data.player.lives <= 0) {
 
                 setDead(true)
-                ctx.font = "bold 100px Comic Sans MS";
+                ctx.font = "bold 5rem Comic Sans MS";
+                ctx.lineTo(canvas.width/2, canvas.height);
+                ctx.textAlign = 'center'
                 ctx.fillStyle = "lightpink";
-                ctx.fillText(`GAME OVER`, canvas.width / 2 - 300, canvas.height / 2 - 200)
+                ctx.fillText(`GAME OVER`, canvas.width/2, canvas.height / 4.5)
                 const deadPig = new Image();
                 deadPig.src = spriteSheet;
-                ctx.drawImage(deadPig, 0, 2 * 350, 350, 350, canvas.width / 2 - 150, canvas.height / 2 - 200, 350, 350)
+                ctx.drawImage(deadPig, 0, 2 * 350, 350, 350, canvas.width / 2.3, canvas.height /5,canvas.height/2.5, canvas.height/2.5)
             } else {
 
 
@@ -84,11 +90,11 @@ function Background() {
     return (<>
         {dead &&
         <>
-            <div className="menu addScore">
-                <div>
-                    <input id="inputName" type="text" placeholder={"type your name..."} onChange={handleOnChange} value={name}/>
+            <div className="addScore">
+            <div className="buttonsDiv">
+                    <input  type="text" placeholder={"type your name..."} onChange={handleOnChange} value={name}/>
                     <Link to="/leaderboard" onClick={saveScore}>Add Score</Link>
-                </div>
+            </div>
                 <Link to="/game" onClick={() => window.location.reload()}>Play again</Link>
             </div>
 

@@ -3,8 +3,8 @@ import cloudImage from "../../sprites/cloudsSprites.png"
 export default class Clouds {
     constructor(canvas) {
         this.x = Math.floor(Math.random() * ((canvas.width + 300) - (canvas.width + 10))) + (canvas.width + 10);
-        this.y = Math.random() * canvas.height - 200;
-        this.size = Math.random() * 350 + 200;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * canvas.height/3 + canvas.height/5;
         this.speedX = -5;
         this.color = "white";
         this.randomNumber = Math.floor(Math.random() * (4 - 1)) + 1;

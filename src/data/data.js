@@ -1,4 +1,7 @@
 const data = {
+    size:{
+        canvasSize: 0,
+    },
     player: {
         points: 0,
         untouchable: false,

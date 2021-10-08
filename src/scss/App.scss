@@ -9,6 +9,7 @@
 #root {
   display: flex;
   justify-content: center;
+  width: 100vw;
 }
 
 body {
@@ -71,23 +72,33 @@ body {
 }
 
 .addScore {
+  width: 100vw;
   position: relative;
-  top: 15rem;
-  //flex-direction: row;
+  top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
-  input {
-    width: 70%;
-    text-decoration: none;
-    font: 25px Comic Sans MS;
+
+
+  a{
+
+    font: 2rem Comic Sans MS;
     padding: 1rem;
     margin: 1rem;
     background-color: white;
-    border-radius: 1rem;
-    color: black;
-    outline: 0.2rem solid pink;
+    border-radius: 20px;
+    color: lightpink;
+    text-shadow: -0.1rem 0 black, 0 0.1rem black, 0.1rem 0 black, 0 -0.1rem black;
+    cursor: pointer;
+    outline: 0.2rem solid lightpink;
     text-align: center;
   }
-
+  a:hover {
+    background-color: lightpink;
+    color: white;
+  }
   ::placeholder {
     color: black;
     text-shadow: none;
@@ -136,7 +147,22 @@ body {
   background: #4db4d5;
 }
 
-#inputName {
-  width: 60%;
-}
 
+.buttonsDiv{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  input {
+    width: 15%;
+    text-decoration: none;
+    font: 1.5rem Comic Sans MS;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    color: black;
+    outline: 0.2rem solid pink;
+    text-align: center;
+  }
+}
